@@ -5,7 +5,7 @@ var geocoding = require('./util/geocoding')
 var forecast = require('./util/weatherstack')
 
 var app = express()
-
+var port = process.env.PORT || 3000
 //defining path for express config
 var publicPath = path.join(__dirname,'../public')
 var viewsPath = path.join(__dirname,'../templates/views')
@@ -82,6 +82,6 @@ app.get("*",(req,res)=>{
     })
 })
 
-app.listen(3000,()=>{
-    console.log("listening to port 3000");
+app.listen(port,()=>{
+    console.log("listening to port"+port);
 })
